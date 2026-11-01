@@ -20,6 +20,8 @@
     <properties>
         <java.version>17</java.version>
         <jjwt.version>0.12.6</jjwt.version>
+        <sonar.projectKey>secure-share</sonar.projectKey>
+        <sonar.projectName>Secure Share</sonar.projectName>
     </properties>
 
     <dependencies>
@@ -103,6 +105,11 @@
                     <!-- silences JDK 24+ native-access / dynamic-agent warnings on `mvn spring-boot:run` -->
                     <jvmArguments>--enable-native-access=ALL-UNNAMED -XX:+EnableDynamicAgentLoading</jvmArguments>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>5.8.0.7211</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

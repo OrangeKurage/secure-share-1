@@ -17,3 +17,6 @@ storage/*
 # Local secrets
 .env
 *.env
+
+# SonarQube scanner work directory
+.scannerwork/
