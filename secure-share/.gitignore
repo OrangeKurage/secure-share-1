@@ -1,0 +1,8 @@
+target/
+data/
+storage/*
+!storage/.gitkeep
+.idea/
+*.iml
+*.mv.db
+*.trace.db

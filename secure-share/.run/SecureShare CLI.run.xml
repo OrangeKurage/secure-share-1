@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="SecureShare CLI" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.secureshare.cli.ShareCli" />
+    <module name="secure-share" />
+    <option name="PROGRAM_PARAMETERS" value="receive --file-id 1 --out C:\Users\Aditya\secureshare-demo\bob-report.txt -p DemoPass1" />
+    <option name="VM_PARAMETERS" value="--enable-native-access=ALL-UNNAMED -Dsecureshare.home=C:\Users\Aditya\secureshare-demo\bob" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

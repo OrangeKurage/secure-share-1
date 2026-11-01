@@ -1,0 +1,35 @@
+### 0. Health
+GET http://localhost:8080/health
+
+### 1. Register  (paste the PUBLIC key printed by cli/DevKeyGen into "publicKey")
+POST http://localhost:8080/users/register
+Content-Type: application/json
+
+{
+  "fullName": "Alice",
+  "email": "alice@example.com",
+  "password": "SecurePass123",
+  "publicKey": "PASTE_PUBLIC_KEY_HERE"
+}
+
+### 2. Login  (copy "token" from the response into the variable below)
+POST http://localhost:8080/users/login
+Content-Type: application/json
+
+{ "email": "alice@example.com", "password": "SecurePass123" }
+
+### 3. Who am I?  (replace TOKEN)
+GET http://localhost:8080/users/me
+Authorization: Bearer TOKEN
+
+### 4. Look up a recipient's public key
+GET http://localhost:8080/users/lookup?email=alice@example.com
+Authorization: Bearer TOKEN
+
+### 5. My files
+GET http://localhost:8080/files/mine
+Authorization: Bearer TOKEN
+
+### 6. Logout (the token stops working immediately)
+POST http://localhost:8080/users/logout
+Authorization: Bearer TOKEN

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Secure Share</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">Phase 10</p>
+      <h1>Secure Share</h1>
+    </div>
+    <p id="who" class="who" hidden></p>
+  </header>
+
+  <p class="lede">Files are encrypted, hashed, and signed in this browser. The server stores ciphertext only.</p>
+
+  <section id="account" class="card">
+    <h2>Account</h2>
+    <form id="register-form">
+      <h3>Register</h3>
+      <label>Name <input name="fullName" required maxlength="100" autocomplete="name"></label>
+      <label>Email <input name="email" type="email" required maxlength="100" autocomplete="username"></label>
+      <label>Password <input name="password" type="password" required minlength="8" maxlength="128" autocomplete="new-password"></label>
+      <button type="submit">Create account</button>
+    </form>
+    <form id="login-form">
+      <h3>Log in</h3>
+      <label>Email <input name="email" type="email" required autocomplete="username"></label>
+      <label>Password <input name="password" type="password" required minlength="8" autocomplete="current-password"></label>
+      <button type="submit">Log in</button>
+    </form>
+    <button id="logout" type="button" hidden>Log out</button>
+  </section>
+
+  <section id="workspace" class="grid" hidden>
+    <section class="card">
+      <h2>Send</h2>
+      <form id="send-form">
+        <label>File <input id="file" type="file" required></label>
+        <label>Recipient email <input id="recipient-email" type="email" placeholder="bob@example.com"></label>
+        <button id="add-recipient" type="button">Add recipient</button>
+        <ul id="recipients"></ul>
+        <label>Permission
+          <select id="permission">
+            <option value="DOWNLOAD">DOWNLOAD</option>
+            <option value="VIEW">VIEW</option>
+          </select>
+        </label>
+        <button type="submit">Encrypt and send</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Inbox</h2>
+      <button id="refresh" type="button">Refresh</button>
+      <h3>Shared with me</h3>
+      <ul id="shared"></ul>
+      <h3>My files</h3>
+      <ul id="mine"></ul>
+    </section>
+  </section>
+
+  <section class="card">
+    <h2>Verification</h2>
+    <p id="status" class="status">No file opened yet.</p>
+  </section>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
