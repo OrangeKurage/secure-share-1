@@ -1,0 +1,19 @@
+# Maven build output
+target/
+
+# Local H2 database and encrypted uploads
+data/
+storage/*
+!storage/.gitkeep
+
+# IDE
+.idea/
+*.iml
+
+# H2 leftovers
+*.mv.db
+*.trace.db
+
+# Local secrets
+.env
+*.env
